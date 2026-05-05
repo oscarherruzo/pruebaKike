@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enrique Contreras López — Backend Developer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,wght@0,300;0,400;0,700;1,300;1,700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="cur-dot" id="cDot"></div>
+<div class="cur-ring" id="cRing"></div>
+
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<nav id="nav">
+    <a href="#" class="nav-logo magnetic">
+        <div class="nav-box">&#60;/&#62;</div>
+        <span class="nav-name">Enrique Contreras</span>
+    </a>
+    <ul class="nav-links">
+        <li><a href="#sobre" class="magnetic">about()</a></li>
+        <li><a href="#skills" class="magnetic">skills[]</a></li>
+        <li><a href="#proyectos" class="magnetic">projects{}</a></li>
+        <li><a href="#experiencia" class="magnetic">experience</a></li>
+        <li><a href="#formacion" class="magnetic">education</a></li>
+        <li><a href="#contacto" class="nav-cta magnetic">contactar →</a></li>
+    </ul>
+    <button class="nav-burger" id="navBurger" aria-label="Menú">
+        <span></span><span></span><span></span>
+    </button>
+</nav>
+
+<div class="nav-mobile" id="navMobile">
+    <a href="#sobre" class="mob-link">about()</a>
+    <a href="#skills" class="mob-link">skills[]</a>
+    <a href="#proyectos" class="mob-link">projects{}</a>
+    <a href="#experiencia" class="mob-link">experience</a>
+    <a href="#formacion" class="mob-link">education</a>
+    <a href="#contacto" class="mob-cta">contactar →</a>
+</div>
+
+<section class="hero">
+    <canvas id="heroCanvas" class="hero-canvas"></canvas>
+    <div class="hero-grid"></div>
+    <div class="glow glow-a"></div>
+    <div class="glow glow-b"></div>
+    <div class="glow glow-c"></div>
+    
+    <div class="hero-in">
+        <div class="hero-badge reveal">
+            <span class="badge-dot"></span>
+            Disponible para proyectos freelance
+        </div>
+        <h1 class="hero-name reveal glitch" data-text="Enrique Contreras">Enrique<br><em>Contreras</em></h1>
+        <p class="hero-role reveal" id="typewriter"></p>
+        <p class="hero-desc reveal">
+            Desarrollador Backend especializado en arquitecturas <strong style="color:#CBD5E1;">Java + Spring</strong> para el sector bancario.
+            Actualmente en <strong style="color:#CBD5E1;">BBVA</strong> a través de Nter Tech Services — construyendo sistemas Batch
+            que procesan el reporte de transacciones del banco cada día.
+        </p>
+        <div class="hero-btns reveal">
+            <a href="#contacto" class="btn-b magnetic">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                Ponte en contacto
+            </a>
+            <a href="#proyectos" class="btn-g magnetic">Ver proyectos →</a>
+            <a href="#sobre" class="btn-g magnetic">Sobre mí</a>
+        </div>
+    </div>
+    
+    <div class="hero-stack reveal">
+        <div class="s-pill magnetic"><strong>Java</strong> · Backend</div>
+        <div class="s-pill magnetic"><strong>Spring Boot</strong> · Framework</div>
+        <div class="s-pill magnetic"><strong>Spring Batch</strong> · Batch Processing</div>
+        <div class="s-pill magnetic"><strong>SQL / DBeaver</strong> · Datos</div>
+        <div class="s-pill magnetic"><strong>Docker</strong> · DevOps</div>
+        <div class="s-pill magnetic"><strong>Angular / TypeScript</strong> · Frontend</div>
+    </div>
+    
+    <div class="scroll-hint reveal">
+        <span class="scroll-txt">scroll</span>
+        <div class="scroll-arr">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.5"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
+        </div>
+    </div>
+</section>
+
+<div class="metrics-strip">
+    <div class="metrics-inner">
+        <div class="metric-item reveal">
+            <div class="metric-num"><span class="counter" data-target="1">0</span><em>+</em></div>
+            <div class="metric-lbl">Año en<br>Nter Tech Services</div>
+            <div class="metric-sub">Prácticas → Formación → Indefinido</div>
+        </div>
+        <div class="metric-item reveal">
+            <div class="metric-num"><span class="counter" data-target="8">0</span><em>+</em></div>
+            <div class="metric-lbl">Tecnologías<br>validadas en LinkedIn</div>
+            <div class="metric-sub">Java · Spring · SQL · Docker · Angular…</div>
+        </div>
+        <div class="metric-item reveal">
+            <div class="metric-num"><span class="counter" data-target="3">0</span><em>+</em></div>
+            <div class="metric-lbl">Años de<br>formación técnica</div>
+            <div class="metric-sub">DAW · DAM · Bachillerato</div>
+        </div>
+    </div>
+</div>
+
+<section class="sec" id="sobre">
+    <div class="wrap">
+        <div class="sec-label reveal">01 &nbsp; about</div>
+        <h2 class="sec-title reveal">Desarrollador con<br><em>visión completa</em></h2>
+        <div class="about-grid">
+            <div class="about-text reveal">
+                <p>¡Hola! Soy <strong>Enrique Contreras López</strong>, desarrollador Backend especializado en Java y el ecosistema Spring. Empecé construyendo interfaces con HTML, CSS y Angular, pero rápidamente me di cuenta de que lo que más me apasiona está <strong>detrás del botón</strong> — la lógica, la arquitectura, los sistemas que no se ven pero lo sostienen todo.</p>
+                <p>Hoy trabajo como Backend Developer en <strong>Nter Tech Services</strong>, con BBVA como cliente, desarrollando estructuras <strong>Batch, Batch Scheduler y Daemons</strong> para el reporte de transacciones bancarias. Un entorno de alta exigencia donde cada proceso tiene impacto real en las operaciones del banco.</p>
+                <p>Llegué aquí pasando por tres etapas en Nter — prácticas formativas, contrato de formación y jornada completa — lo que me dio una base sólida: SQL, Git, Python, Spring Boot y ahora <strong>Spring Batch en producción</strong>. Antes de eso, tuve mi primer contacto profesional en <strong>GRUPO SOLUTIO</strong> con Angular y SCSS.</p>
+                <p style="margin-top:8px;">
+                    <span class="status-ok magnetic">
+                        <span class="sdot"></span>
+                        Backend Developer · BBVA · Nter Tech Services
+                    </span>
+                </p>
+            </div>
+            <div class="stagger">
+                <div class="terminal-window tilt-card reveal" style="margin-top: 20px;">
+                    <div class="terminal-header">
+                        <div class="term-dots">
+                            <span class="tdot red"></span><span class="tdot yellow"></span><span class="tdot green"></span>
+                        </div>
+                        <span class="terminal-title">enrique@backend-server:~</span>
+                    </div>
+                    <div class="terminal-body" id="terminalBody">
+                        <div class="term-line">EnriqueOS (Linux 5.15.0-generic x86_64)</div>
+                        <div class="term-line">Bienvenido a la terminal interactiva. Escribe <span class="term-highlight">'help'</span> para ver los comandos.</div>
+                    </div>
+                    <div class="terminal-input-wrapper">
+                        <span class="term-prompt">enrique@backend:~$</span>
+                        <input type="text" id="terminalInput" autocomplete="off" spellcheck="false">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="div-l">
+
+<section class="band" id="skills">
+    <div class="wrap">
+        <div class="sec-label reveal">02 &nbsp; skills</div>
+        <h2 class="sec-title reveal">Stack <em>técnico</em></h2>
+        <div class="skills-grid stagger">
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">☕</div>
+                    <div>
+                        <p class="sk-name">Java · Spring Ecosystem</p>
+                        <p class="sk-type">Backend · Core</p>
+                    </div>
+                    <span class="sk-pct">90%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="90"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">Java</span><span class="tag-d">Spring Boot</span><span class="tag-d">Spring Batch</span><span class="tag-d">Daemons</span>
+                </div>
+            </div>
+
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">🗄️</div>
+                    <div>
+                        <p class="sk-name">Bases de Datos</p>
+                        <p class="sk-type">Backend · Datos</p>
+                    </div>
+                    <span class="sk-pct">85%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="85"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">SQL</span><span class="tag-d">DBeaver</span><span class="tag-d">XML</span><span class="tag-d">YAML</span>
+                </div>
+            </div>
+
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">🎨</div>
+                    <div>
+                        <p class="sk-name">Maquetación Web</p>
+                        <p class="sk-type">Frontend · Layout</p>
+                    </div>
+                    <span class="sk-pct">95%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="95"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">HTML5</span><span class="tag-d">CSS</span><span class="tag-d">SCSS</span><span class="tag-d">Bootstrap</span>
+                </div>
+            </div>
+
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">⚡</div>
+                    <div>
+                        <p class="sk-name">Frontend JS</p>
+                        <p class="sk-type">Frameworks · Librerías</p>
+                    </div>
+                    <span class="sk-pct">80%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="80"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">Angular</span><span class="tag-d">TypeScript</span><span class="tag-d">JavaScript</span><span class="tag-d">Vue.js</span>
+                </div>
+            </div>
+
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">🛠️</div>
+                    <div>
+                        <p class="sk-name">DevOps · Herramientas</p>
+                        <p class="sk-type">Dev Tools · CI/CD</p>
+                    </div>
+                    <span class="sk-pct">80%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="80"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">Git</span><span class="tag-d">Docker</span><span class="tag-d">Azure DevOps</span><span class="tag-d">Scrum</span>
+                </div>
+            </div>
+
+            <div class="skill-card tilt-card">
+                <div class="sk-head">
+                    <div class="sk-ico">🐍</div>
+                    <div>
+                        <p class="sk-name">Otros lenguajes</p>
+                        <p class="sk-type">Formación transversal</p>
+                    </div>
+                    <span class="sk-pct">70%</span>
+                </div>
+                <div class="sk-bar-wrap"><div class="sk-bar" data-w="70"></div></div>
+                <div class="tag-row">
+                    <span class="tag-d">Python</span><span class="tag-d">PHP · Laravel</span><span class="tag-d">Kotlin</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="sec" id="proyectos">
+    <div class="wrap">
+        <div class="sec-label reveal">03 &nbsp; projects</div>
+        <h2 class="sec-title reveal">Trabajo <em>destacado</em></h2>
+
+        <div class="proj-featured reveal tilt-card" style="transform-style: preserve-3d;">
+            <div class="proj-feat-body" style="transform: translateZ(30px);">
+                <span class="proj-badge">Proyecto actual · BBVA</span>
+                <h3 class="proj-title">Reporte de Transacciones Bancarias · BBVA</h3>
+                <p class="proj-desc">Sistema de procesamiento batch para el reporte de transacciones diarias en BBVA. Desarrollo de estructuras <strong>Batch, Batch Scheduler y Daemons</strong> en Java con Spring Batch — procesos críticos que operan en producción cada día.</p>
+                <div class="tag-row" style="margin-top:8px;">
+                    <span class="tag-l">Java</span><span class="tag-l">Spring Batch</span><span class="tag-l">Batch Scheduler</span><span class="tag-l">SQL</span><span class="tag-l">Docker</span>
+                </div>
+                <p style="margin-top:16px;">
+                    <span class="status-ok"><span class="sdot"></span>En producción · BBVA · oct. 2025 – actualidad</span>
+                </p>
+            </div>
+            <div class="proj-feat-preview" style="transform: translateZ(20px);">
+                <div class="prev-cover prev-bbva" style="width:100%;height:100%;">
+                    <div class="floating-shapes">
+                        <svg class="prev-shape shape-anim-1" style="width:220px;height:220px;background:#38BDF8;top:-40px;right:-40px;" viewBox="0 0 1 1"></svg>
+                        <svg class="prev-shape shape-anim-2" style="width:100px;height:100px;background:#0284C7;bottom:-20px;left:20px;" viewBox="0 0 1 1"></svg>
+                    </div>
+                    <div style="position:relative;z-index:2;padding:24px;">
+                        <p class="prev-cover-sub">java · spring batch · bbva</p>
+                        <p class="prev-cover-title">Batch<br>Banking</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="proj-grid stagger">
+            <div class="proj-card tilt-card">
+                <div class="proj-card-preview">
+                    <div class="prev-cover prev-solutio" style="width:100%;height:100%;">
+                        <svg class="prev-shape shape-anim-1" style="width:120px;height:120px;background:#34D399;top:-20px;right:-10px;" viewBox="0 0 1 1"></svg>
+                        <div style="position:relative;z-index:2;padding:16px;">
+                            <p class="prev-cover-sub">nter tech · proyecto interno</p>
+                            <p class="prev-cover-title" style="font-size:1.1rem;">Gestor de<br>Empleados</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-card-body">
+                    <span class="proj-badge">Nter · Formación</span>
+                    <h3 class="proj-title">Sistema Gestor de Empleados · Nter</h3>
+                    <p class="proj-desc">Proyecto interno de Nter Tech Services desarrollado durante el contrato de formación. Sistema de gestión de empleados con Spring Boot y SQL.</p>
+                    <div class="tag-row">
+                        <span class="tag-l">Spring Boot</span><span class="tag-l">SQL</span><span class="tag-l">Java</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-card tilt-card">
+                <div class="proj-card-preview">
+                    <div class="prev-cover prev-dax" style="width:100%;height:100%;">
+                        <svg class="prev-shape shape-anim-2" style="width:100px;height:100px;background:#A78BFA;bottom:-10px;right:-10px;" viewBox="0 0 1 1"></svg>
+                        <div style="position:relative;z-index:2;padding:16px;">
+                            <p class="prev-cover-sub">GRUPO SOLUTIO · frontend</p>
+                            <p class="prev-cover-title" style="font-size:1.1rem;">Frontend<br>Angular</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-card-body">
+                    <span class="proj-badge">GRUPO SOLUTIO · Prácticas</span>
+                    <h3 class="proj-title">Frontend Dev · GRUPO SOLUTIO</h3>
+                    <p class="proj-desc">Primer contacto profesional en remoto con Córdoba. Desarrollo de componentes Angular con SCSS, integración con Azure DevOps y trabajo en equipo.</p>
+                    <div class="tag-row">
+                        <span class="tag-l">Angular</span><span class="tag-l">SCSS</span><span class="tag-l">Azure DevOps</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="proj-card tilt-card">
+                <div class="proj-card-preview">
+                    <div class="prev-cover prev-portfolio" style="width:100%;height:100%;">
+                        <svg class="prev-shape shape-anim-1" style="width:90px;height:90px;background:#38BDF8;top:-10px;right:10px;" viewBox="0 0 1 1"></svg>
+                        <div style="position:relative;z-index:2;padding:16px;">
+                            <p class="prev-cover-sub">formación cross · nter</p>
+                            <p class="prev-cover-title" style="font-size:1.1rem;">SQL · Git<br>· Python</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="proj-card-body">
+                    <span class="proj-badge">Formación interna</span>
+                    <h3 class="proj-title">Formación CROSS · Nter Tech</h3>
+                    <p class="proj-desc">Formación transversal durante las prácticas en Nter: SQL para bases de datos, Git para control de versiones y Python como lenguaje complementario.</p>
+                    <div class="tag-row">
+                        <span class="tag-l">SQL</span><span class="tag-l">Git</span><span class="tag-l">Python</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<hr class="div-l">
+
+<section class="sec" id="experiencia">
+    <div class="wrap">
+        <div class="sec-label reveal">04 &nbsp; experience</div>
+        <h2 class="sec-title reveal">Trayectoria <em>profesional</em></h2>
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;">
+            <div class="timeline stagger">
+                <div class="tl-item active">
+                    <div class="tl-pulse"></div>
+                    <p class="tl-date">Oct. 2025 – Actualidad · 8 meses</p>
+                    <p class="tl-title">Backend Developer</p>
+                    <p class="tl-company">Nter Tech Services · Cliente BBVA</p>
+                    <p class="tl-type">Jornada completa · Presencial · Jaén, Andalucía</p>
+                    <p class="tl-desc">Trabajando en el sector bancario con BBVA como cliente, centrado en el reporte de transacciones. Creación de estructuras Batch, Batch Scheduler y Daemons.</p>
+                    <ul class="tl-bullets">
+                        <li><strong>Spring Batch</strong> en producción — procesos críticos bancarios</li>
+                        <li>Arquitectura de <strong>Batch Schedulers y Daemons</strong> de alta disponibilidad</li>
+                        <li>Stack: <strong>Java · Spring Boot · SQL · Docker · GitLab</strong></li>
+                    </ul>
+                </div>
+
+                <div class="tl-item">
+                    <p class="tl-date">May. 2025 – Oct. 2025 · 6 meses</p>
+                    <p class="tl-title">Backend Developer</p>
+                    <p class="tl-company">Nter Tech Services</p>
+                    <p class="tl-type">Contrato de formación · Presencial · Jaén</p>
+                    <p class="tl-desc">Sistema gestor de empleados de la propia empresa. Primer proyecto real en Backend, trabajando directamente con cliente interno.</p>
+                    <ul class="tl-bullets">
+                        <li>Sistema gestor de empleados con <strong>Spring Boot + SQL</strong></li>
+                        <li>Metodología <strong>Scrum</strong> · Azure DevOps · GitLab</li>
+                    </ul>
+                </div>
+
+                <div class="tl-item">
+                    <p class="tl-date">Mar. 2025 – May. 2025 · 3 meses</p>
+                    <p class="tl-title">Desarrollador en Prácticas</p>
+                    <p class="tl-company">Nter Tech Services</p>
+                    <p class="tl-type">Contrato de prácticas · Presencial · Jaén</p>
+                    <p class="tl-desc">Formación CROSS de la empresa con SQL, Git y Python — base técnica sólida que permitió el salto al Backend con garantías.</p>
+                </div>
+
+                <div class="tl-item">
+                    <p class="tl-date">Abr. 2024 – Jun. 2024 · 3 meses</p>
+                    <p class="tl-title">Frontend Developer</p>
+                    <p class="tl-company">GRUPO SOLUTIO</p>
+                    <p class="tl-type">Contrato de prácticas · Remoto · Córdoba, Andalucía</p>
+                    <p class="tl-desc">Prácticas formativas en Frontend con Angular y SCSS. Primer entorno profesional real.</p>
+                </div>
+            </div>
+            
+                <div class="swagger-wrapper tilt-card reveal">
+                    <p class="swagger-header-title">Experiencia API Docs <span>v1.0.0</span></p>
+                    
+                    <div class="swagger-container">
+                        <div class="swagger-endpoint" id="swaggerToggle">
+                            <span class="swagger-method">GET</span>
+                            <span class="swagger-path">/api/v1/enrique/experience</span>
+                            <span class="swagger-desc">Obtener historial laboral</span>
+                            <svg class="swagger-arrow" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+                        </div>
+                        <div class="swagger-body" id="swaggerBody">
+                            <div class="swagger-response-code">200 OK</div>
+                            <pre><code class="language-json">[
+                {
+                    "company": "Nter Tech Services",
+                    "client": "BBVA",
+                    "role": "Backend Developer",
+                    "stack": ["Java", "Spring Batch", "SQL"],
+                    "current": true,
+                    "desc": "Procesamiento crítico en producción"
+                },
+                {
+                    "company": "Nter Tech Services",
+                    "role": "Backend Developer (Formación)",
+                    "stack": ["Spring Boot", "SQL", "Scrum"],
+                    "current": false
+                }
+                ]</code></pre>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</section>
+
+<section class="band" id="formacion">
+    <div class="wrap">
+        <div class="sec-label reveal">05 &nbsp; education</div>
+        <h2 class="sec-title reveal">Formación e <em>idiomas</em></h2>
+
+        <div style="display:grid;grid-template-columns:1.1fr 1fr;gap:56px;align-items:start;">
+            <div class="stagger">
+                <div class="edu-card tilt-card">
+                    <div class="edu-ico" style="background:var(--blue);">🎓</div>
+                    <div>
+                        <p class="edu-title">FP Superior · Desarrollo de Aplicaciones Multiplataforma</p>
+                        <p class="edu-place">IES Jándula</p>
+                        <p class="edu-date">2024 – Actualidad</p>
+                        <p class="edu-tags">Aplicaciones multiplataforma · Java · Kotlin · Bases de datos</p>
+                    </div>
+                </div>
+                <div class="edu-card tilt-card">
+                    <div class="edu-ico">💻</div>
+                    <div>
+                        <p class="edu-title">FP Superior · Desarrollo de Aplicaciones Web</p>
+                        <p class="edu-place">IES Jándula</p>
+                        <p class="edu-date">2022 – 2024</p>
+                        <p class="edu-tags">HTML · CSS · JavaScript · PHP · Angular · Bases de datos web</p>
+                    </div>
+                </div>
+                <div class="edu-card tilt-card">
+                    <div class="edu-ico">📚</div>
+                    <div>
+                        <p class="edu-title">Bachillerato en Ciencias de la Tecnología</p>
+                        <p class="edu-place">IES Jándula</p>
+                        <p class="edu-date">2018 – 2020</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="reveal">
+                <p class="sec-label" style="margin-bottom:16px;">Idiomas</p>
+                <div class="lang-grid stagger" style="grid-template-columns:1fr;">
+                    <div class="lang-card tilt-card">
+                        <p class="lang-name">Español</p>
+                        <p class="lang-level">Nativo</p>
+                        <div class="lang-dots">
+                            <div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div>
+                        </div>
+                    </div>
+                    <div class="lang-card tilt-card">
+                        <p class="lang-name">Inglés</p>
+                        <p class="lang-level">B1 · Cambridge</p>
+                        <div class="lang-dots">
+                            <div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot on"></div><div class="l-dot"></div><div class="l-dot"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="contact-band" id="contacto">
+    <div class="wrap">
+        <div class="contact-grid">
+            <div class="reveal">
+                <div class="sec-label" style="color:#334155;">06 &nbsp; contact</div>
+                <h2 class="contact-title">Hablemos de tu<br><em>próximo proyecto</em></h2>
+                <p class="contact-sub">
+                    ¿Tienes una idea, un proyecto o simplemente quieres conectar? Estoy abierto a colaboraciones, proyectos freelance y nuevas oportunidades en el mundo del desarrollo web y BackEnd.
+                </p>
+            </div>
+            <div class="stagger">
+                <a class="c-link magnetic" id="emailLink" style="background:rgba(56,189,248,.1);border-color:rgba(56,189,248,.3);cursor:pointer;">
+                    <div class="c-ico" style="background:rgba(56,189,248,.12);">
+                        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#38BDF8" stroke-width="2.5"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4 20-7z"/></svg>
+                    </div>
+                    <div>
+                        <p class="c-lbl" style="color:#475569;">Escríbeme un email</p>
+                        <p class="c-val" style="color:#38BDF8;" id="emailDisplay">Cargando...</p>
+                    </div>
+                    <svg class="c-arrow" style="color:#38BDF8;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+                <a href="tel:+34665270437" class="c-link magnetic">
+                    <div class="c-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="#475569" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.91a16 16 0 0 0 6 6l.91-.91a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
+                    <div><p class="c-lbl">Teléfono</p><p class="c-val">+34 665 270 437</p></div>
+                    <svg class="c-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+                <a href="https://www.linkedin.com/in/enrique-contreras-lopez" target="_blank" class="c-link magnetic">
+                    <div class="c-ico"><svg width="17" height="17" viewBox="0 0 24 24" fill="#475569"><path d="M19 0H5C2.24 0 0 2.24 0 5v14c0 2.76 2.24 5 5 5h14c2.76 0 5-2.24 5-5V5c0-2.76-2.24-5-5-5zm-11 19H5V8h3v11zM6.5 6.73A1.77 1.77 0 1 1 8.27 4.96 1.77 1.77 0 0 1 6.5 6.73zM20 19h-3v-5.6c0-3.37-4-3.12-4 0V19h-3V8h3v1.77C14.4 7.08 20 6.88 20 12.3V19z"/></svg></div>
+                    <div><p class="c-lbl">LinkedIn</p><p class="c-val">Enrique Contreras López</p></div>
+                    <svg class="c-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    <span class="ft-l">&#60;/&#62; Enrique Contreras López · Backend Developer</span>
+    <span class="ft-r">Nter Tech Services · BBVA · Andújar, Jaén · 2026</span>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
