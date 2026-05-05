@@ -320,3 +320,292 @@ footer { background:#030508;padding:24px 44px;display:flex;align-items:center;ju
 .terminal-input-wrapper { display: flex; align-items: center; padding: 0 16px 16px 16px; gap: 8px; }
 .term-prompt { color: #3FB950; font-size: 0.85rem; white-space: nowrap; }
 .terminal-input-wrapper input { flex: 1; background: transparent; border: none; color: #E6EDF3; font-family: var(--mono); font-size: 0.85rem; outline: none; caret-color: #E6EDF3; }
+/* ===================================
+   RESPONSIVE FIXES - MOBILE COMPLETO
+   =================================== */
+
+/* --- Grids con clase (antes inline) --- */
+.exp-swagger-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+.edu-lang-grid {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr;
+  gap: 56px;
+  align-items: start;
+}
+
+/* --- Skills y Projects: minmax más pequeño para no desbordar --- */
+.skills-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(320px, 100%), 1fr));
+}
+.proj-grid {
+  grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+}
+
+/* --- Swagger: evitar overflow en path --- */
+.swagger-path {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 160px;
+}
+.swagger-endpoint {
+  flex-wrap: nowrap;
+  min-width: 0;
+}
+
+/* ========================
+   TABLET: max-width 900px
+   ======================== */
+@media (max-width: 900px) {
+  .exp-swagger-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  .edu-lang-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  /* swagger se ve completo sin el panel lateral */
+  .swagger-wrapper {
+    margin-top: 0;
+  }
+  .swagger-path {
+    max-width: 55vw;
+  }
+}
+
+/* ========================
+   MÓVIL: max-width 600px
+   ======================== */
+@media (max-width: 600px) {
+  /* Grids de 1 columna */
+  .exp-swagger-grid,
+  .edu-lang-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  /* Skills y Projects: 1 columna forzada en móvil */
+  .skills-grid,
+  .proj-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Skill cards: padding reducido */
+  .skill-card {
+    padding: 18px 16px;
+  }
+
+  /* Proj featured: ajuste completo */
+  .proj-featured {
+    grid-template-columns: 1fr;
+  }
+  .proj-feat-body {
+    padding: 20px 16px;
+  }
+  .proj-feat-preview {
+    min-height: 160px;
+    border-left: none;
+    border-top: 1px solid #E2E8F0;
+  }
+
+  /* Proj card body */
+  .proj-card-body {
+    padding: 18px 16px;
+  }
+
+  /* Swagger en móvil */
+  .swagger-wrapper {
+    overflow: hidden;
+  }
+  .swagger-header-title {
+    font-size: 0.7rem;
+    flex-wrap: wrap;
+    gap: 4px;
+  }
+  .swagger-path {
+    font-size: 0.75rem;
+    max-width: calc(100vw - 160px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  .swagger-method {
+    font-size: 0.7rem;
+    padding: 3px 10px;
+    flex-shrink: 0;
+  }
+  .swagger-endpoint {
+    padding: 8px 10px;
+    gap: 8px;
+  }
+  .swagger-body pre {
+    overflow-x: auto;
+  }
+  .swagger-body code {
+    font-size: 0.72rem;
+    display: block;
+    min-width: 0;
+  }
+  .swagger-container {
+    margin: 10px;
+  }
+
+  /* Terminal: reducir en móvil */
+  .terminal-window {
+    height: 280px;
+  }
+  .terminal-body {
+    font-size: 0.78rem;
+  }
+  .terminal-input-wrapper input {
+    font-size: 0.78rem;
+  }
+  .term-prompt {
+    font-size: 0.78rem;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 120px;
+    text-overflow: ellipsis;
+  }
+
+  /* Timeline: reducir sangría */
+  .timeline {
+    padding-left: 22px;
+    border-left-width: 2px;
+  }
+  .tl-item::before {
+    left: -29px;
+    width: 10px;
+    height: 10px;
+  }
+  .tl-pulse {
+    left: -29px;
+  }
+  .tl-title {
+    font-size: 1rem;
+  }
+  .tl-bullets li {
+    font-size: 0.85rem;
+  }
+
+  /* Education cards */
+  .edu-card {
+    padding: 14px 14px;
+    gap: 12px;
+  }
+  .edu-ico {
+    width: 40px;
+    height: 40px;
+    font-size: 18px;
+  }
+  .edu-title {
+    font-size: 0.88rem;
+  }
+
+  /* About: fact cards */
+  .fact-card {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  /* Contact links */
+  .c-val {
+    font-size: 0.85rem;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    max-width: 48vw;
+  }
+  .c-link {
+    padding: 12px 14px;
+    gap: 12px;
+  }
+
+  /* Metrics strip */
+  .metric-num {
+    font-size: 2.2rem;
+  }
+  .metric-lbl {
+    font-size: 0.6rem;
+  }
+  .metric-sub {
+    font-size: 0.68rem;
+  }
+
+  /* Tags wrap correcto */
+  .tag-row {
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .tag-d, .tag-l {
+    font-size: 0.6rem;
+    padding: 3px 8px;
+  }
+
+  /* About text */
+  .about-text p {
+    font-size: 0.95rem;
+  }
+
+  /* Hero desc */
+  .hero-desc {
+    font-size: 0.95rem;
+  }
+
+  /* Sección labels */
+  .sec-label {
+    font-size: 0.65rem;
+  }
+
+  /* Scroll hint en móvil muy pequeño */
+  .scroll-hint {
+    bottom: 20px;
+  }
+
+  /* Footer ya tiene sus estilos, reforzar */
+  footer {
+    padding: 16px 20px;
+    text-align: center;
+  }
+  .ft-l, .ft-r {
+    font-size: 0.65rem;
+  }
+}
+
+/* ========================
+   MÓVIL PEQUEÑO: max-width 380px
+   ======================== */
+@media (max-width: 380px) {
+  .wrap, .hero-in {
+    padding: 0 14px;
+  }
+  .hero-name {
+    font-size: clamp(2.2rem, 11vw, 3rem);
+  }
+  .sec-title {
+    font-size: clamp(1.6rem, 8vw, 2rem);
+  }
+  .swagger-path {
+    max-width: calc(100vw - 140px);
+    font-size: 0.68rem;
+  }
+  .terminal-window {
+    height: 240px;
+  }
+  .c-val {
+    max-width: 42vw;
+  }
+  .btn-b, .btn-g {
+    font-size: 0.85rem;
+    padding: 12px 16px;
+  }
+  .metrics-inner {
+    padding: 0 14px;
+  }
+}
