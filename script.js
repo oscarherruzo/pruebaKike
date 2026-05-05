@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    /* --- SWAGGER UI LOGIC --- */
+    const swaggerToggle = document.getElementById('swaggerToggle');
+    const swaggerContainer = document.querySelector('.swagger-container');
+    const swaggerBody = document.getElementById('swaggerBody');
+
+    if(swaggerToggle && swaggerContainer && swaggerBody) {
+        swaggerToggle.addEventListener('click', () => { 
+            // Alternamos la clase 'open' para que la flechita gire (CSS)
+            swaggerContainer.classList.toggle('open');
+            
+            // Mostramos u ocultamos el bloque de código
+            if (swaggerContainer.classList.contains('open')) {
+                swaggerBody.style.display = 'block';
+                // Pequeño delay para que la transición de opacidad se vea suave
+                setTimeout(() => swaggerBody.style.opacity = '1', 10);
+            } else {
+                swaggerBody.style.display = 'none';
+                swaggerBody.style.opacity = '0';
+            }
+        });
+    }
+
     /* --- TERMINAL INTERACTIVA LOGIC --- */
     const termInput = document.getElementById('terminalInput');
     const termBody = document.getElementById('terminalBody');
@@ -61,6 +83,7 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
     /* --- PROGRESS BAR --- */
     window.addEventListener('scroll', () => {
         const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
